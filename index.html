@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlodz Scripts | Premium FiveM Scripts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #ffc10733;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ffc107, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1600') center/cover;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffc107, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #ffc107, #ff9800);
+            color: #000;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffc107;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        /* Scripts Grid */
+        .scripts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .script-card {
+            background: #14141f;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #ffffff10;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .script-card:hover {
+            transform: translateY(-8px);
+            border-color: #ffc10755;
+        }
+
+        .script-card .card-header {
+            background: linear-gradient(135deg, #1a1a2e, #252540);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .script-card .card-header h2 {
+            font-size: 2rem;
+            color: #ffc107;
+            margin-bottom: 8px;
+        }
+
+        .script-card .card-header span {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        .script-card .card-body {
+            padding: 25px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ffffff08;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        .features-list li::before {
+            content: "✓ ";
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #ffc10722;
+            color: #ffc107;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 3px;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-box {
+            background: #14141f;
+            padding: 30px 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #ffffff08;
+            transition: border-color 0.3s;
+        }
+
+        .feature-box:hover {
+            border-color: #ffc10744;
+        }
+
+        .feature-box .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-box h3 {
+            color: #ffc107;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-box p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        /* Commands */
+        .commands-box {
+            background: #0d0d14;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #ffc10722;
+            font-family: 'Courier New', monospace;
+        }
+
+        .commands-box h3 {
+            color: #ffc107;
+            margin-bottom: 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .command {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ffffff08;
+            color: #ccc;
+        }
+
+        .command code {
+            color: #ffc107;
+            background: #ffc10715;
+            padding: 3px 10px;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0f;
+            border-top: 1px solid #ffc10722;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            nav a {
+                margin-left: 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">CARLODZ SCRIPTS</div>
+            <nav>
+                <a href="#scripts">Scripts</a>
+                <a href="#features">Features</a>
+                <a href="#commands">Commands</a>
+                <a href="https://github.com/Carlodz" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="max-width: none; padding: 0;">
+        <div class="hero-content">
+            <h1>CARLODZ SCRIPTS</h1>
+            <p>Premium FiveM Scripts — Your Pet. Your Companion. Your Story.</p>
+            <a href="#scripts" class="btn">Explore Scripts</a>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <section id="scripts">
+        <h2 class="section-title">Our Scripts</h2>
+        <p class="section-subtitle">High quality, optimized & modern FiveM experiences</p>
+
+        <div class="scripts-grid">
+            <!-- WAYPETS -->
+            <div class="script-card">
+                <div class="card-header">
+                    <h2>WAYPETS</h2>
+                    <span>Pet Shop Script</span>
+                </div>
+                <div class="card-body">
+                    <ul class="features-list">
+                        <li>Name Your Pet</li>
+                        <li>Follow & Companion System</li>
+                        <li>Play With Your Pet</li>
+                        <li>Pet Vehicle System</li>
+                        <li>Hunger & Happiness System</li>
+                        <li>Realistic Pet Behavior</li>
+                        <li>Beautiful Pet Shop UI</li>
+                        <li>Multi-Language Support</li>
+                    </ul>
+                    <div>
+                        <span class="tag">QB-Core</span>
+                        <span class="tag">Modern UI</span>
+                        <span class="tag">Optimized</span>
+                        <span class="tag">Stable</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WAYSCOOT -->
+            <div class="script-card">
+                <div class="card-header">
+                    <h2>WAYSCOOT</h2>
+                    <span>Scooter Script</span>
+                </div>
+                <div class="card-body">
+                    <ul class="features-list">
+                        <li>Realistic Scooter Experience</li>
+                        <li>Smooth Animations</li>
+                        <li>Modern Design</li>
+                        <li>Optimized Performance</li>
+                        <li>Easy to Configure</li>
+                        <li>Full Support</li>
+                    </ul>
+                    <div>
+                        <span class="tag">FiveM</span>
+                        <span class="tag">Optimized</span>
+                        <span class="tag">Premium</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+        <h2 class="section-title">WAYPETS Features</h2>
+        <p class="section-subtitle">Everything you need for the ultimate pet experience</p>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="icon">🐾</div>
+                <h3>Name Your Pet</h3>
+                <p>Choose the name you love for your pet</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon">🚶</div>
+                <h3>Follow & Companion</h3>
+                <p>Your pet follows you, enters interiors and stays with you</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon">🎮</div>
+                <h3>Play With Your Pet</h3>
+                <p>Interact, play and have fun together</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon">🚗</div>
+                <h3>Pet Vehicle System</h3>
+                <p>Your pet rides with you in the car with special interactions</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon">🍖</div>
+                <h3>Hunger System</h3>
+                <p>Feed your pet from inventory with special eating animation</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon">❤️</div>
+                <h3>Happiness System</h3>
+                <p>Happiness increases with care, play and food</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon">😴</div>
+                <h3>Pet Behavior</h3>
+                <p>Sit, stand, sleep, interact and more. Cats sleep when you sit</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon">🌍</div>
+                <h3>Multi-Language</h3>
+                <p>Arabic, English, French & Chinese support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commands -->
+    <section id="commands">
+        <h2 class="section-title">Key Commands</h2>
+        <p class="section-subtitle">Simple and powerful commands for WAYPETS</p>
+
+        <div class="commands-box">
+            <h3>WAYPETS Commands</h3>
+            <div class="command">
+                <code>/dog</code>
+                <span>Call your dog</span>
+            </div>
+            <div class="command">
+                <code>/cat</code>
+                <span>Call your cat</span>
+            </div>
+            <div class="command">
+                <code>/dogoff</code>
+                <span>Remove dog</span>
+            </div>
+            <div class="command">
+                <code>/catoff</code>
+                <span>Remove cat</span>
+            </div>
+            <div class="command">
+                <code>/animspawn</code>
+                <span>Spawn pet (small)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo">CARLODZ SCRIPTS</div>
+        <p>Premium FiveM Scripts</p>
+        <p style="margin-top: 20px;">
+            <a href="https://github.com/Carlodz/Carlodz-Scripts" target="_blank">GitHub Repository</a>
+        </p>
+        <p>© 2026 Carlodz Scripts. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
